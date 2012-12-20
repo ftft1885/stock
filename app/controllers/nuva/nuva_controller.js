@@ -1,7 +1,5 @@
-
-
-action('undefined',function(){
-	render({title:"stock index"});
+action('index',function(){
+	render({title:"nuva index"});
 });
 action('search',function(){
 	render({title:"stock search"});
@@ -12,6 +10,7 @@ action('mystock',function(){
 action('about',function(){
 	render({title:"stock about me"});
 });
+/*
 action('query',function(data){
 	var stock = data.context.req.url.split("?")[1];
 	var nodegrass = require('nodegrass');
@@ -85,4 +84,4 @@ action('query',function(data){
 function getString(str){
 	var _str = str.split('=')[1];
 	return _str.substring(1,_str.length-2);
-}
+}*/
