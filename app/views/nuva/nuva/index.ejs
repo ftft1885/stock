@@ -1,0 +1,86 @@
+<div class="row-fluid">
+	<div class="span3">
+		<div class="well sidebar-nav">
+		<ul id="tab" class="nav nav-list nav-list-big">
+			<li><a href="#state" data-toggle="tab">状态</a></li>
+			<li><a href="#ipgroup" data-toggle="tab">浮动IP组</a></li>
+			<li><a href="#vs" data-toggle="tab">虚拟服务器</a></li>
+			<li><a href="#pool" data-toggle="tab">服务池</a></li>
+			<li><a>配置概要</a></li>
+			<li><a>集群诊断</a></li>
+			<li><a>事件日志</a></li>
+			<li><a>审计日志</a></li>
+			<li><a>当前状况</a></li>
+		</ul>
+		</div>
+	</div>
+
+	<div class="span9 tab-content">
+	<div id="state" class="tab-pane fade active in">
+
+	<h1>state</h1>
+	</div>
+	<div id="ipgroup" class="tab-pane">
+	<h1>ipgroup</h1>
+	</div>
+	<div id="vs" class="tab-pane">
+	<h1>vs</h1>
+	</div>
+	<div id="pool" class="container-fluid tab-pane well">
+		<div>
+			<a href="#" class="btn btn-large disabled btn-primary">服务池</a>
+			<a href="#addNewPool" role="button" data-toggle="modal" class="btn btn-large btn-primary pull-right">新建服务池</a>
+			<div id="addNewPool" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModelLable" aria-hidden="true">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+					<h3>新建服务池</h3>
+				</div>
+				<div class="modal-body">
+					<form class="form-horizontal">
+						<div class="control-group warning">
+							<label class="control-label">服务池名称</label>
+							<div class="controls">
+								<input type="text" id="pool_name">
+							</div>
+						</div>
+						<div class="control-group warning">
+							<label class="control-label">服务节点</label>
+							<div class="controls">
+								<input type="text" id="pool_node">
+							</div>
+						</div>
+						<div class="control-group">
+							<label class="control-label">会话保持算法</label>
+							<div class="controls">
+								<select>
+									<option>基于IP的会话保持</option>
+									<option>通过会话保持</option>
+									<option>节点名称会话保持</option>
+									<option>接入cookie会话保持</option>
+									<option>应用cookies健康检查</option>
+								</select>
+							</div>
+						</div>
+
+					</form>
+				</div>
+				<div class="modal-footer">
+					<button class="btn" data-dismiss="modal" aria-hidden="true">取消</button>
+					<button class="btn btn-primary">确认</button>
+				</div>
+			</div>
+		</div>
+		<div class="row-fuild">
+			<div class="span4">
+			<h2>pool 1</h2>
+			</div>
+			<div class="span4">
+			<h2>pool 2</h2>
+			</div>
+			<div class="span4">
+			<h2>pool 3</h2>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
