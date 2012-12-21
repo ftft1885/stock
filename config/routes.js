@@ -12,6 +12,7 @@ exports.routes = function (map) {
 		//nuva.get("/","nuva#index");
 		nuva.get("/about","nuva#about");
 		nuva.get("/pool","nuva#pool");
+		nuva.post("/addpool","nuva#addpool");
 	});
     // Generic routes. Add all your routes below this line
     // feel free to remove generic routes

@@ -52,21 +52,30 @@
 						<div class="control-group">
 							<label class="control-label">会话保持算法</label>
 							<div class="controls">
-								<select>
-									<option>基于IP的会话保持</option>
-									<option>通过会话保持</option>
-									<option>节点名称会话保持</option>
-									<option>接入cookie会话保持</option>
-									<option>应用cookies健康检查</option>
+								<select id="pool_persist">
+									<option value=1>基于IP的会话保持</option>
+									<option value=2>通过会话保持</option>
+									<option value=3>节点名称会话保持</option>
+									<option value=4>接入cookie会话保持</option>
+									<option value=5>应用cookies健康检查</option>
 								</select>
 							</div>
+							<div class="control-group warning hidden" id="pool_persist_cookie">
+								<label class="control-label">Cookie:</label>
+								<div class="controls">
+									<input type="text" id="pool_node">
+								</div>
+							</div>
+
+							
 						</div>
+						
 
 					</form>
 				</div>
 				<div class="modal-footer">
 					<button class="btn" data-dismiss="modal" aria-hidden="true">取消</button>
-					<button class="btn btn-primary">确认</button>
+					<button id="add_pool_submit" class="btn btn-primary">确认</button>
 				</div>
 			</div>
 		</div>
@@ -84,3 +93,33 @@
 	</div>
 </div>
 </div>
+<script>
+$('#pool_persist').on('change',function(){
+	console.log($(this).val());
+	if($(this).val() == 5){
+		$('#pool_persist_cookie').removeClass("hidden");
+		//var html = "<h3>test</h3>"
+		//$(this).after(html);
+	}
+	else{
+		$('#pool_persist_cookie').addClass("hidden");
+	}
+	//var html = "<h3>test</h3>";
+	//this.after(html);
+});
+function poolSubmit(){
+	console.log("submit");
+	var url = "/nuva/addpool";
+	console.log($('#pool_persist').val());
+	var data = {
+		name	:	$('#pool_name').val(),
+		id		:	new Date().getTime(),
+		nodes	:	$('#pool_node').val(),
+		persist	:	$('#pool_persist').val(),
+	}
+	$.post(url,data,function(){console.log("should be close");},"json");
+	return false;
+}
+$('#add_pool_submit').click(poolSubmit);
+</script>
+

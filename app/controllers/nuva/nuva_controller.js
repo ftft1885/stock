@@ -1,6 +1,11 @@
 action('index',function(){
 	render({title:"nuva index"});
 });
+action('addpool',function(data){
+	var req = data.context.req;
+	console.log(req.body);
+	send("saved");
+});
 action('search',function(){
 	render({title:"stock search"});
 });
