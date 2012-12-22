@@ -1,4 +1,4 @@
-<h2><a href="ftft1885.github.com/stock">软件工程概要设计</a><--点击这里</h2>
+<h2><a href="http://ftft1885.github.com/stock">软件工程概要设计</a><--点击</h2>
 <pre>
 # ######                         #######
 #       ###### #    #  ####        #     ####  #    #  ####
